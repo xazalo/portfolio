@@ -1,5 +1,4 @@
 import { ArrowUpRight, Download, Mail } from 'lucide-react'
-import { SectionHeading } from '../ui/SectionHeading.tsx'
 import { Reveal } from '../ui/Reveal.tsx'
 import { profile } from '../../data/profile.ts'
 import { socialLinks } from '../../data/socialLinks.ts'
