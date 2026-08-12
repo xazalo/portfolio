@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+@source not "../.agents";
+@source not "../dist";
+
+@custom-variant hoverable {
+  @media (hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
+@theme {
+  --font-display: 'Montserrat', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-foreground: #111827;
+  --color-secondary: #4b5563;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #2ecc71;
+  --color-accent-hover: #27ae60;
+  --color-accent-strong: #15803d;
+
+  --text-hero: clamp(2.75rem, 7vw, 6rem);
+  --text-section: clamp(2rem, 4vw, 3.5rem);
+
+  --shadow-card: 0 4px 12px rgb(0 0 0 / 0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-strong);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0.01ms !important;
+    }
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: 20px;
+
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: 40px;
+  }
+}
+
+@utility section-pad {
+  padding-block: 64px;
+
+  @media (min-width: 768px) {
+    padding-block: 96px;
+  }
+}
