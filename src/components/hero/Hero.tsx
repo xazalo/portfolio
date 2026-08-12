@@ -141,14 +141,17 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={350}>
-            <div
-              className="
-                mt-8 flex w-full flex-col
-                items-stretch gap-3
-                sm:w-auto sm:flex-row
-                lg:justify-start
-              "
-            >
+<div
+  className="
+    mt-8 flex w-full flex-col
+    items-center gap-3
+
+    sm:w-full sm:flex-row sm:flex-wrap
+    sm:justify-center
+
+    lg:w-fit lg:justify-start
+  "
+>
               <Button
                 href="#projects"
                 size="lg"
