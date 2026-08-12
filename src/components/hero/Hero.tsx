@@ -1,7 +1,7 @@
-import { Badge } from '../ui/Badge.tsx'
-import { Button } from '../ui/Button.tsx'
-import { Reveal } from '../ui/Reveal.tsx'
-import { profile } from '../../data/profile.ts'
+import { Badge } from "../ui/Badge.tsx";
+import { Button } from "../ui/Button.tsx";
+import { Reveal } from "../ui/Reveal.tsx";
+import { profile } from "../../data/profile.ts";
 
 export function Hero() {
   return (
@@ -87,8 +87,8 @@ export function Hero() {
               </span>
 
               {profile.availability
-                ? 'Available for opportunities'
-                : 'Not currently available'}
+                ? "Available for opportunities"
+                : "Not currently available"}
             </Badge>
           </Reveal>
 
@@ -114,7 +114,7 @@ export function Hero() {
                 text-foreground
               "
             >
-              Hi, I&apos;m{' '}
+              Hi, I&apos;m{" "}
               <span
                 className="
                   bg-gradient-to-r from-accent
@@ -141,8 +141,8 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={350}>
-<div
-  className="
+            <div
+              className="
     mt-8 flex w-full flex-col
     items-center gap-3
 
@@ -151,7 +151,7 @@ export function Hero() {
 
     lg:w-fit lg:justify-start
   "
->
+            >
               <Button
                 href="#projects"
                 size="lg"
@@ -282,7 +282,6 @@ export function Hero() {
                     aria-hidden="true"
                     className="h-1.5 w-1.5 rounded-full bg-accent"
                   />
-
                   Open to work
                 </div>
               </div>
@@ -291,5 +290,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
