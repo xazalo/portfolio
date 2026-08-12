@@ -286,19 +286,6 @@ export function Hero() {
                   Open to work
                 </div>
               </div>
-
-              {/* Small accent detail */}
-              <div
-                aria-hidden="true"
-                className="
-                  absolute -bottom-2 -right-2
-                  h-8 w-8
-                  rounded-full
-                  border-4 border-background
-                  bg-accent
-                  shadow-lg shadow-accent/30
-                "
-              />
             </div>
           </Reveal>
         </div>
