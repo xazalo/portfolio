@@ -140,7 +140,7 @@ export function ContactSection() {
                 "
               />
 
-              Available for opportunities
+              Open to full-time roles
             </div>
 
             <h2
@@ -155,10 +155,10 @@ export function ContactSection() {
                 lg:text-6xl
               "
             >
-              Let&apos;s build
+              Looking for my next
               <span className="text-emerald-400">
                 {' '}
-                something useful.
+                engineering role.
               </span>
             </h2>
 
@@ -175,9 +175,9 @@ export function ContactSection() {
                 sm:leading-8
               "
             >
-              Have a project, opportunity, or idea?
-              I&apos;m always open to interesting collaborations
-              and opportunities to build useful products.
+              I&apos;m actively seeking opportunities to join an innovative tech team.
+              Whether you have an open position, a referral, or just want to review my code,
+              I&apos;d love to connect.
             </p>
           </div>
 
@@ -235,7 +235,7 @@ export function ContactSection() {
             >
               <Mail className="h-4 w-4" />
 
-              Get in touch
+              Contact me
 
               <ArrowUpRight
                 className="
@@ -287,7 +287,7 @@ export function ContactSection() {
               "
             >
               <Download className="h-4 w-4" />
-              Download CV
+              Download Resume
             </a>
           </div>
         </div>
@@ -320,7 +320,7 @@ export function ContactSection() {
                 text-white/30
               "
             >
-              Find me
+              Connect with me
             </span>
 
             {socialLinks.map((link) => (

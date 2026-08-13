@@ -1,4 +1,4 @@
-import { Eye } from 'lucide-react'
+import { ExternalLink, Eye } from 'lucide-react'
 import type { Project } from '../../data/projects.ts'
 import { Badge } from '../ui/Badge.tsx'
 import { Card } from '../ui/Card.tsx'
@@ -129,69 +129,80 @@ export function ProjectCard({
           hover:to-emerald-50/50
         "
       >
-        {/* Background glow */}
-        <span
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            left-1/2
-            top-1/2
-            h-32
-            w-32
+        {/* Render Image if available, otherwise display Initial */}
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover/preview:scale-105"
+          />
+        ) : (
+          <>
+            {/* Background glow */}
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                left-1/2
+                top-1/2
+                h-32
+                w-32
 
-            -translate-x-1/2
-            -translate-y-1/2
+                -translate-x-1/2
+                -translate-y-1/2
 
-            rounded-full
+                rounded-full
 
-            bg-emerald-400/0
-            blur-3xl
+                bg-emerald-400/0
+                blur-3xl
 
-            transition-all
-            duration-500
+                transition-all
+                duration-500
 
-            group-hover/preview:scale-[2]
-            group-hover/preview:bg-emerald-400/15
-          "
-        />
+                group-hover/preview:scale-[2]
+                group-hover/preview:bg-emerald-400/15
+              "
+            />
 
-        {/* Inner depth */}
-        <span
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            inset-0
+            {/* Inner depth */}
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                inset-0
 
-            bg-gradient-to-b
-            from-white/60
-            via-transparent
-            to-black/[0.025]
+                bg-gradient-to-b
+                from-white/60
+                via-transparent
+                to-black/[0.025]
 
-            opacity-70
-          "
-        />
+                opacity-70
+              "
+            />
 
-        {/* Project initial */}
-        <span
-          className="
-            relative
-            z-10
+            {/* Project initial */}
+            <span
+              className="
+                relative
+                z-10
 
-            transition-all
-            duration-300
-            ease-out
+                transition-all
+                duration-300
+                ease-out
 
-            group-hover/preview:-translate-y-1
-            group-hover/preview:scale-110
-            group-hover/preview:text-emerald-500
+                group-hover/preview:-translate-y-1
+                group-hover/preview:scale-110
+                group-hover/preview:text-emerald-500
 
-            group-hover/preview:[text-shadow:0_10px_25px_rgba(52,211,153,0.30)]
-          "
-        >
-          {project.title.charAt(0)}
-        </span>
+                group-hover/preview:[text-shadow:0_10px_25px_rgba(52,211,153,0.30)]
+              "
+            >
+              {project.title.charAt(0)}
+            </span>
+          </>
+        )}
 
         {/* Quick view overlay */}
         <span
@@ -318,58 +329,80 @@ export function ProjectCard({
           ))}
         </ul>
 
-        {/* Links */}
+        {/* Action Links */}
         {project.liveUrl || project.githubUrl ? (
           <div
             className="
-              mt-5
+              mt-6
               flex
-              gap-4
-              text-sm
-              font-medium
+              items-center
+              gap-3
+              pt-4
+              border-t
+              border-black/[0.06]
             "
           >
-            {project.liveUrl ? (
+            {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label={`Visit live demo for ${project.title}`}
                 className="
-                  relative
-                  text-foreground
-
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-lg
+                  border
+                  border-emerald-500/20
+                  bg-emerald-50/50
+                  px-3
+                  py-1.5
+                  text-xs
+                  font-medium
+                  text-emerald-700
                   transition-all
                   duration-200
-
-                  hover:text-emerald-500
-
-                  hover:[text-shadow:0_4px_12px_rgba(52,211,153,0.30)]
+                  hover:bg-emerald-500
+                  hover:text-white
+                  hover:border-emerald-500
+                  hover:shadow-[0_2px_8px_rgba(52,211,153,0.30)]
                 "
               >
-                Live
+                <ExternalLink className="h-3.5 w-3.5" />
+                Live Demo
               </a>
-            ) : null}
+            )}
 
-            {project.githubUrl ? (
+            {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label={`View GitHub repository for ${project.title}`}
                 className="
-                  relative
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-lg
+                  border
+                  border-black/[0.10]
+                  bg-white
+                  px-3
+                  py-1.5
+                  text-xs
+                  font-medium
                   text-foreground
-
                   transition-all
                   duration-200
-
-                  hover:text-emerald-500
-
-                  hover:[text-shadow:0_4px_12px_rgba(52,211,153,0.30)]
+                  hover:border-black/[0.20]
+                  hover:bg-black/[0.03]
+                  hover:text-emerald-600
                 "
               >
-                GitHub
+                Source Code
               </a>
-            ) : null}
+            )}
           </div>
         ) : null}
       </div>

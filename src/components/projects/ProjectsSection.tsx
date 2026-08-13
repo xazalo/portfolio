@@ -11,7 +11,7 @@ type ProjectFilter = 'all' | ProjectCategory
 const FILTERS: { id: ProjectFilter; label: string }[] = [
   { id: 'all', label: 'All projects' },
   { id: 'frontend', label: 'Frontend' },
-  { id: 'backend', label: 'Backend' },
+  { id: 'fullstack', label: 'Full Stack' },
 ]
 
 interface ProjectsSectionProps {
