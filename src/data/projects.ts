@@ -1,4 +1,4 @@
-export type ProjectCategory = 'frontend' | 'backend'
+export type ProjectCategory = 'frontend' | 'fullstack'
 
 export interface Project {
   id: string
@@ -14,32 +14,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'project-one',
-    title: 'Project One',
-    description: 'Short description of this placeholder project.',
+    id: 'camel-up',
+    title: 'Camel Up Game',
+    description:
+      'A real-time multiplayer implementation of the board game, featuring dynamic betting logic, WebSockets for live sync, and an interactive user interface.',
+    category: 'fullstack',
+    technologies: ['Vue 3', 'TypeScript', 'WebSockets'],
+    featured: true,
+    liveUrl: 'https://camelup-camelup-tzqanr-1f0d01-138-199-214-210.sslip.io/',
+    githubUrl: 'https://github.com/xazalo/CamelUp-deploy'
+  },
+  {
+    id: 'zalor-studio',
+    title: 'Zalor Studio Platform',
+    description:
+      'Digital platform designed as the foundation for an independent creative agency, create websites, featuring service showcases, client onboarding.',
+    category: 'frontend',
+    technologies: ['Node.js', 'Nuxt', 'CSS'],
+    featured: true,
+    liveUrl: 'https://zalorstudio.com',
+    githubUrl: 'https://github.com/tu-usuario/zalor-studio'
+  },
+  {
+    id: 'developer-portfolio',
+    title: 'Interactive Portfolio',
+    description:
+      'Modern personal portfolio and developer showcase featuring dynamic skill filtering, fluid page flow, fast build tooling, and a responsive design.',
     category: 'frontend',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     featured: true,
-  },
-  {
-    id: 'project-two',
-    title: 'Project Two',
-    description: 'Short description of this placeholder project.',
-    category: 'backend',
-    technologies: ['Node.js', 'Express', 'REST APIs'],
-  },
-  {
-    id: 'project-three',
-    title: 'Project Three',
-    description: 'Short description of this placeholder project.',
-    category: 'frontend',
-    technologies: ['React', 'Framer Motion', 'Vite'],
-  },
-  {
-    id: 'project-four',
-    title: 'Project Four',
-    description: 'Short description of this placeholder project.',
-    category: 'backend',
-    technologies: ['Node.js', 'TypeScript', 'REST APIs'],
-  },
+    githubUrl: 'https://github.com/xazalo/portfolio'
+  }
 ]

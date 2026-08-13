@@ -1,4 +1,4 @@
-export type SkillCategory = 'frontend' | 'backend' | 'tooling'
+export type SkillCategory = 'frontend' | 'backend' | 'others'
 
 export interface SkillGroup {
   category: SkillCategory
@@ -11,23 +11,23 @@ export const skillGroups: SkillGroup[] = [
     category: 'frontend',
     label: 'Frontend',
     skills: [
-      'React',
+      'Nuxt',
+      'Vue',
       'TypeScript',
       'JavaScript',
       'HTML',
       'CSS',
       'Tailwind CSS',
-      'Framer Motion',
     ],
   },
   {
     category: 'backend',
     label: 'Backend',
-    skills: ['Node.js', 'Express', 'REST APIs'],
+    skills: ['Node.js', 'Fastify', 'REST APIs'],
   },
   {
-    category: 'tooling',
-    label: 'Tooling',
-    skills: ['Git', 'GitHub', 'Vite', 'ESLint', 'Prettier'],
+    category: 'others',
+    label: 'Others',
+    skills: ['Git', 'GitHub', 'Deployment', 'Docker', 'Rust', 'OpenCode'],
   },
 ]

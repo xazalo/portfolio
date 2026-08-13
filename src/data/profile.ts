@@ -1,9 +1,9 @@
 export const profile = {
-  name: 'Your Name',
+  name: 'Xavier Zamora',
   role: 'Software Developer',
-  email: 'you@example.com',
+  email: 'xaviza11@gmail.com',
   availability: true,
-  bio: 'I build thoughtful digital experiences for the web.',
+  bio: 'I love build thoughtful digital experiences for the web.',
   resumeUrl: '/resume.pdf',
 } as const
 
