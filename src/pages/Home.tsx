@@ -5,7 +5,7 @@ import { Footer } from '../components/layout/Footer.tsx'
 import { Hero } from '../components/hero/Hero.tsx'
 import { ProjectsSection } from '../components/projects/ProjectsSection.tsx'
 import { ProjectModal } from '../components/projects/ProjectModal.tsx'
-import { EducationSection } from '../components/experience/EducationSection.tsx'
+import { EducationSection } from '../components/education/EducationSection.tsx'
 import { SkillsSection } from '../components/skills/SkillsSection.tsx'
 import { ContactSection } from '../components/contact/ContactSection.tsx'
 
