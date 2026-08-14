@@ -1,7 +1,7 @@
-import { Badge } from '../ui/Badge.tsx'
-import { Button } from '../ui/Button.tsx'
-import { Reveal } from '../ui/Reveal.tsx'
-import { profile } from '../../data/profile.ts'
+import { Badge } from "../ui/Badge.tsx";
+import { Button } from "../ui/Button.tsx";
+import { Reveal } from "../ui/Reveal.tsx";
+import { profile } from "../../data/profile.ts";
 
 export function Hero() {
   return (
@@ -10,7 +10,8 @@ export function Hero() {
       className="
         relative isolate flex min-h-[100svh] w-full items-center
         overflow-hidden px-5 pb-16 pt-24
-        sm:px-8 lg:px-12 lg:pt-20
+        sm:px-8
+        lg:px-12 lg:pt-20
       "
     >
       {/* Ambient background */}
@@ -20,10 +21,10 @@ export function Hero() {
       >
         <div
           className="
-            absolute left-[60%] top-[20%]
+            absolute left-[58%] top-[15%]
             h-[280px] w-[280px] -translate-x-1/2
             rounded-full bg-accent/10 blur-[110px]
-            sm:h-[420px] sm:w-[420px]
+            sm:h-[440px] sm:w-[440px]
           "
         />
 
@@ -47,12 +48,13 @@ export function Hero() {
       <div
         className="
           container-page mx-auto grid w-full
-          items-center gap-14
-          lg:grid-cols-[1.1fr_0.9fr] lg:gap-20
+          items-center
+          lg:grid-cols-[1.15fr_0.85fr]
+          lg:gap-12
         "
       >
         {/* Content */}
-        <div className="order-2 text-center lg:order-1 lg:text-left">
+        <div className="text-center lg:text-left">
           <Reveal delay={0}>
             <Badge
               variant="accent"
@@ -87,15 +89,16 @@ export function Hero() {
               </span>
 
               {profile.availability
-                ? 'Available for opportunities'
-                : 'Not currently available'}
+                ? "Available for opportunities"
+                : "Not currently available"}
             </Badge>
           </Reveal>
 
           <Reveal delay={100}>
             <p
               className="
-                mt-6 text-sm font-medium uppercase
+                mt-6
+                text-sm font-medium uppercase
                 tracking-[0.2em] text-muted
                 sm:text-base
               "
@@ -107,19 +110,24 @@ export function Hero() {
           <Reveal delay={150}>
             <h1
               className="
-                mt-4 font-display
-                text-[clamp(3rem,7vw,6rem)]
-                font-semibold leading-[0.95]
+                mt-4 max-w-3xl
+                font-display
+                text-[clamp(3rem,6vw,5.5rem)]
+                font-semibold
+                leading-[0.92]
                 tracking-[-0.045em]
                 text-foreground
               "
             >
-              Hi, I&apos;m{' '}
+              Hi, I&apos;m{" "}
               <span
                 className="
-                  bg-gradient-to-r from-accent
-                  via-foreground to-muted
-                  bg-clip-text text-transparent
+                  bg-gradient-to-r
+                  from-accent
+                  via-foreground
+                  to-muted
+                  bg-clip-text
+                  text-transparent
                 "
               >
                 {profile.name}.
@@ -130,7 +138,7 @@ export function Hero() {
           <Reveal delay={250}>
             <p
               className="
-                mx-auto mt-6 max-w-xl
+                mx-auto mt-7 max-w-xl
                 text-base leading-7 text-muted
                 sm:text-lg sm:leading-8
                 lg:mx-0
@@ -141,17 +149,14 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={350}>
-<div
-  className="
-    mt-8 flex w-full flex-col
-    items-center gap-3
-
-    sm:w-full sm:flex-row sm:flex-wrap
-    sm:justify-center
-
-    lg:w-fit lg:justify-start
-  "
->
+            <div
+              className="
+                mt-8
+                flex flex-col items-center gap-3
+                sm:flex-row sm:justify-center
+                lg:justify-start
+              "
+            >
               <Button
                 href="#projects"
                 size="lg"
@@ -182,114 +187,67 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Avatar */}
-        <div className="order-1 flex justify-center lg:order-2">
-          <Reveal delay={150}>
-            <div className="relative">
-              {/* Main card */}
-              <div
-                className="
-                  relative
-                  h-64 w-64
-                  rotate-2
-                  overflow-hidden
-                  rounded-[2rem]
-                  border border-foreground/10
-                  bg-muted/10
-                  shadow-2xl
-                  transition-transform duration-500
-                  hover:rotate-0
-                  sm:h-80 sm:w-80
-                  lg:h-[380px] lg:w-[380px]
-                "
-              >
-                {/* Background */}
-                <div
-                  aria-hidden="true"
-                  className="
-                    absolute inset-0
-                    bg-gradient-to-br
-                    from-accent/20
-                    via-background
-                    to-muted/20
-                  "
-                />
+        {/* Decorative typography */}
+        <div
+          aria-hidden="true"
+          className="
+            relative hidden
+            h-[360px]
+            items-center justify-center
+            lg:flex
+          "
+        >
+          <div
+            className="
+              absolute
+              h-[280px] w-[280px]
+              rounded-full
+              border border-foreground/[0.06]
+            "
+          />
 
-                {/* Decorative light */}
-                <div
-                  aria-hidden="true"
-                  className="
-                    absolute -right-16 -top-16
-                    h-40 w-40
-                    rounded-full
-                    bg-accent/20
-                    blur-3xl
-                  "
-                />
+          <div
+            className="
+              absolute
+              h-[210px] w-[210px]
+              rounded-full
+              border border-accent/[0.10]
+            "
+          />
 
-                {/* Temporary avatar */}
-                <div
-                  className="
-                    relative flex h-full w-full
-                    items-center justify-center
-                  "
-                >
-                  <span
-                    role="img"
-                    aria-label={`Avatar placeholder for ${profile.name}`}
-                    className="
-                      select-none
-                      text-[8rem]
-                      leading-none
-                      drop-shadow-2xl
-                      transition-transform duration-500
-                      hover:scale-110
-                      sm:text-[10rem]
-                      lg:text-[12rem]
-                    "
-                  >
-                    👨‍💻
-                  </span>
-                </div>
+          <div
+            className="
+              absolute
+              h-[120px] w-[120px]
+              rounded-full
+              bg-accent/[0.04]
+              blur-2xl
+            "
+          />
 
-                {/* Bottom gradient */}
-                <div
-                  aria-hidden="true"
-                  className="
-                    pointer-events-none
-                    absolute inset-x-0 bottom-0 h-1/3
-                    bg-gradient-to-t
-                    from-background/30
-                    to-transparent
-                  "
-                />
-
-                {/* Status */}
-                <div
-                  className="
-                    absolute bottom-4 left-4
-                    flex items-center gap-2
-                    rounded-full
-                    border border-white/10
-                    bg-background/70
-                    px-3 py-1.5
-                    text-[11px] font-medium
-                    text-muted
-                    backdrop-blur-md
-                  "
-                >
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-accent"
-                  />
-
-                  Open to work
-                </div>
-              </div>
-            </div>
-          </Reveal>
+          <p
+            className="
+              relative
+              max-w-[280px]
+              text-center
+              text-[11px]
+              font-medium
+              uppercase
+              leading-[2.2]
+              tracking-[0.45em]
+              text-muted/40
+            "
+          >
+            Design
+            <br />
+            Development
+            <br />
+            Digital
+            <br />
+            Experience
+          </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
