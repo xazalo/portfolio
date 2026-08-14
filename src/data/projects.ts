@@ -1,3 +1,7 @@
+import project1Image from '../assets/1.png'
+import project2Image from '../assets/2.png'
+import project3Image from '../assets/3.png'
+
 export type ProjectCategory = 'frontend' | 'fullstack'
 
 export interface Project {
@@ -22,7 +26,8 @@ export const projects: Project[] = [
     technologies: ['Vue 3', 'TypeScript', 'WebSockets'],
     featured: true,
     liveUrl: 'https://camelup-camelup-tzqanr-1f0d01-138-199-214-210.sslip.io/',
-    githubUrl: 'https://github.com/xazalo/CamelUp-deploy'
+    githubUrl: 'https://github.com/xazalo/CamelUp-deploy',
+    image: project1Image,
   },
   {
     id: 'zalor-studio',
@@ -33,7 +38,8 @@ export const projects: Project[] = [
     technologies: ['Node.js', 'Nuxt', 'CSS'],
     featured: true,
     liveUrl: 'https://zalorstudio.com',
-    githubUrl: 'https://github.com/tu-usuario/zalor-studio'
+    githubUrl: 'https://github.com/tu-usuario/zalor-studio',
+    image: project2Image,
   },
   {
     id: 'developer-portfolio',
@@ -43,6 +49,7 @@ export const projects: Project[] = [
     category: 'frontend',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     featured: true,
-    githubUrl: 'https://github.com/xazalo/portfolio'
-  }
+    githubUrl: 'https://github.com/xazalo/portfolio',
+    image: project3Image,
+  },
 ]
