@@ -4,5 +4,5 @@ services:
       context: .
     container_name: portfolio
     ports:
-      - "3000:3000"
+      - "3012:3000"
     restart: unless-stopped
