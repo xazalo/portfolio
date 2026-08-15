@@ -1,9 +1,24 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy files
+COPY package*.json ./
+RUN npm ci
+
+# Copy code
+COPY . .
+RUN npm run build
+
+# --- Serve---
 FROM alpine:latest
 
 RUN apk add --no-cache nginx
 
 COPY nginx.conf /etc/nginx/http.d/default.conf
-COPY dist /usr/share/nginx/html
+
+# Copy dist
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
