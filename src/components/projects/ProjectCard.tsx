@@ -100,11 +100,13 @@ export function ProjectCard({
         className="
           group/preview
           relative
-          flex
-          aspect-[16/9]
-          items-center
-          justify-center
+          w-full
           overflow-hidden
+
+          aspect-[2/1]
+          sm:aspect-[2/1]
+
+          shrink-0
 
           border-b
           border-black/[0.10]
@@ -131,11 +133,31 @@ export function ProjectCard({
       >
         {/* Render Image if available, otherwise display Initial */}
         {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover/preview:scale-105"
-          />
+          <div className="absolute inset-0">
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              loading="lazy"
+              decoding="async"
+              sizes="
+                (max-width: 640px) 100vw,
+                (max-width: 1024px) 50vw,
+                33vw
+              "
+              className="
+                block
+                h-full
+                w-full
+                object-cover
+                object-center
+
+                transition-transform
+                duration-500
+
+                group-hover/preview:scale-105
+              "
+            />
+          </div>
         ) : (
           <>
             {/* Background glow */}
@@ -281,6 +303,7 @@ export function ProjectCard({
         <div className="flex items-center justify-between gap-3">
           <h3
             className="
+              min-w-0
               font-display
               text-lg
               font-semibold
@@ -296,7 +319,9 @@ export function ProjectCard({
             {project.title}
           </h3>
 
-          <Badge>{categoryLabel}</Badge>
+          <Badge className="shrink-0">
+            {categoryLabel}
+          </Badge>
         </div>
 
         {/* Description */}
@@ -335,11 +360,12 @@ export function ProjectCard({
             className="
               mt-6
               flex
+              flex-wrap
               items-center
               gap-3
-              pt-4
               border-t
               border-black/[0.06]
+              pt-4
             "
           >
             {project.liveUrl && (
@@ -363,9 +389,9 @@ export function ProjectCard({
                   text-emerald-700
                   transition-all
                   duration-200
+                  hover:border-emerald-500
                   hover:bg-emerald-500
                   hover:text-white
-                  hover:border-emerald-500
                   hover:shadow-[0_2px_8px_rgba(52,211,153,0.30)]
                 "
               >
