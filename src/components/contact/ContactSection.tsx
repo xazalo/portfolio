@@ -158,7 +158,7 @@ export function ContactSection() {
               Looking for my next
               <span className="text-emerald-400">
                 {' '}
-                engineering role.
+              role.
               </span>
             </h2>
 
