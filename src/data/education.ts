@@ -13,7 +13,7 @@ export const education: Education[] = [
   {
     id: 'uoc-certificate',
     institution: 'Universitat Oberta de Catalunya (UOC)',
-    degree: 'Javascript C1 / Course',
+    degree: 'University Certification: Advanced JavaScript Programming',
     startDate: '2025',
     endDate: '2026',
     description:
