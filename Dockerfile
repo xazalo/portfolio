@@ -2,6 +2,9 @@ FROM node:latest AS builder
 
 WORKDIR /app
 
+# Por esto:
+RUN npm install
+
 # Copy files
 COPY package*.json ./
 RUN npm ci
