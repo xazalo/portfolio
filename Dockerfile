@@ -1,26 +1,22 @@
-FROM node:latest AS builder
+FROM node:22-alpine AS builder
+
+RUN corepack enable
 
 WORKDIR /app
 
-# Por esto:
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
 
-# Copy files
-COPY package*.json ./
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
-# Copy code
 COPY . .
-RUN npm run build
 
-# --- Serve---
-FROM alpine:latest
+RUN pnpm build
 
-RUN apk add --no-cache nginx
+# --- Serve ---
+FROM nginx:alpine
 
-COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy dist
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
