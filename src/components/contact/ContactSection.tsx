@@ -253,7 +253,7 @@ export function ContactSection() {
 
             <a
               href={profile.resumeUrl}
-              download
+              download={profile.resumeUrl}
               className="
                 inline-flex
                 items-center
